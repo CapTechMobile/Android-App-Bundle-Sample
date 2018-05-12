@@ -5,14 +5,14 @@
     android:background="?android:selectableItemBackground">
 
     <TextView
+        android:id="@+id/destinationTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:layout_marginLeft="16dp"
-        android:textSize="18dp"
-        android:id="@+id/destinationTextView"/>
+        android:textSize="18dp" />
 
     <ImageView
         android:layout_width="18dp"
@@ -21,6 +21,6 @@
         android:layout_centerVertical="true"
         android:layout_marginRight="8dp"
         android:alpha="0.6"
-        android:src="@drawable/baseline_chevron_right_black_18"/>
+        android:src="@drawable/baseline_chevron_right_black_18" />
 
 </RelativeLayout>
