@@ -24,7 +24,7 @@ public class HomeActivity extends AppCompatActivity implements HomeRecyclerAdapt
                 ((TravelDestinationsApplication)getApplication()).getAppModel().getDestinatations());
         homeRecyclerView.setAdapter(homeRecyclerAdapter);
         homeRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        homeRecyclerView.addItemDecoration(new HorizontalDividerDecoration(this, R.color.colorPrimaryDark));
+        homeRecyclerView.addItemDecoration(new HorizontalDividerDecoration(this, R.color.colorGray));
 
         getSupportActionBar().setTitle("Travel Destinations");
     }

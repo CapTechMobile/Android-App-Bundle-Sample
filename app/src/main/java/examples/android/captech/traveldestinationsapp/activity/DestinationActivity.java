@@ -14,15 +14,6 @@ public class DestinationActivity extends AppCompatActivity {
 
     public static final String destination_extra = "destination_extra";
 
-    private ViewPager cityImagesViewPager;
-    private TextView cityTextView;
-    private TextView countryTextView;
-    private TextView continentTextView;
-    private TextView languageTextView;
-    private TextView populationTextView;
-    private TextView densityTextView;
-    private TextView descriptionTextView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,25 +24,23 @@ public class DestinationActivity extends AppCompatActivity {
         DestinationModel destinationModel
                 = ((TravelDestinationsApplication)getApplication()).getAppModel().getDestinatations()[destinationIndex];
 
-        cityImagesViewPager = findViewById(R.id.cityImagesViewPager);
-        cityTextView = findViewById(R.id.cityTextView);
-        countryTextView = findViewById(R.id.countryTextView);
-        continentTextView = findViewById(R.id.continentTextView);
-        languageTextView = findViewById(R.id.languageTextView);
-        populationTextView = findViewById(R.id.populationTextView);
-        densityTextView = findViewById(R.id.densityTextView);
-        descriptionTextView = findViewById(R.id.descriptionTextView);
+        ViewPager cityImagesViewPager = findViewById(R.id.cityImagesViewPager);
+        TextView cityTextView = findViewById(R.id.cityTextView);
+        TextView continentTextView = findViewById(R.id.continentTextView);
+        TextView languageTextView = findViewById(R.id.languageTextView);
+        TextView populationAndAreaTextView = findViewById(R.id.populationAndAreaTextView);
+        TextView densityTextView = findViewById(R.id.densityTextView);
+        TextView descriptionTextView = findViewById(R.id.descriptionTextView);
 
         DestinationImagesViewPagerAdapter destinationImagesViewPagerAdapter
                 = new DestinationImagesViewPagerAdapter(getApplicationContext(), destinationModel.getDestinationImageResourceIds());
 
         cityImagesViewPager.setAdapter(destinationImagesViewPagerAdapter);
-        cityTextView.setText(destinationModel.getCity());
-        countryTextView.setText(destinationModel.getCountry());
-        continentTextView.setText(destinationModel.getContinent());
-        languageTextView.setText(destinationModel.getLanguage());
-        populationTextView.setText(destinationModel.getPopulation());
-        densityTextView.setText(destinationModel.getDensity());
+        cityTextView.setText(destinationModel.getCity() + ", " + destinationModel.getCountry());
+        continentTextView.setText("Continent: " + destinationModel.getContinent());
+        languageTextView.setText("Language: " + destinationModel.getLanguage());
+        populationAndAreaTextView.setText("Population: " + destinationModel.getPopulation() + ", Area: " + destinationModel.getArea());
+        densityTextView.setText("Density: " + destinationModel.getDensity());
         descriptionTextView.setText(getApplicationContext().getString(destinationModel.getDescriptionResourceId()));
 
         getSupportActionBar().setTitle(destinationModel.getCity());

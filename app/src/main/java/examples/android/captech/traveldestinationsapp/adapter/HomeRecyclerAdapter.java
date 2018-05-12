@@ -24,12 +24,12 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             View.OnClickListener {
 
         private OnItemClickListener onItemClickListener;
-        private TextView categoryTextView;
+        private TextView destinationTextView;
 
         public CategoryViewHolder(View view, OnItemClickListener onItemClickListener) {
             super(view);
             this.onItemClickListener = onItemClickListener;
-            this.categoryTextView = view.findViewById(R.id.categoryTextView);
+            this.destinationTextView = view.findViewById(R.id.destinationTextView);
 
             if (onItemClickListener != null) {
                 view.setOnClickListener(this);
@@ -56,13 +56,13 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         switch (viewType) {
             default:
                 return new CategoryViewHolder(LayoutInflater.from(context)
-                        .inflate(R.layout.home_category_item, parent, false), listener);
+                        .inflate(R.layout.home_desintation_item, parent, false), listener);
         }
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ((CategoryViewHolder)holder).categoryTextView.setText(destinations[position].getCity());
+        ((CategoryViewHolder)holder).destinationTextView.setText(destinations[position].getCity());
     }
 
     @Override
