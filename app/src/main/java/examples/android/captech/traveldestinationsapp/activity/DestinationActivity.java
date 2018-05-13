@@ -24,6 +24,8 @@ public class DestinationActivity extends AppCompatActivity {
         DestinationModel destinationModel
                 = ((TravelDestinationsApplication)getApplication()).getAppModel().getDestinatations()[destinationIndex];
 
+        destinationModel = onDestinationModelLoad(destinationModel);
+
         ViewPager cityImagesViewPager = findViewById(R.id.cityImagesViewPager);
         TextView cityTextView = findViewById(R.id.cityTextView);
         TextView continentTextView = findViewById(R.id.continentTextView);
@@ -44,5 +46,11 @@ public class DestinationActivity extends AppCompatActivity {
         descriptionTextView.setText(getApplicationContext().getString(destinationModel.getDescriptionResourceId()));
 
         getSupportActionBar().setTitle(destinationModel.getCity());
+    }
+
+    // Give overriding classes a chance to alter the DestinationModel, needed for the
+    // dynamic feature model example
+    public DestinationModel onDestinationModelLoad(DestinationModel destinationModel) {
+        return destinationModel;
     }
 }
