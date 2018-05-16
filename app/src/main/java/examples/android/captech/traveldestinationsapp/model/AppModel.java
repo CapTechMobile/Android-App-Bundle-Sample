@@ -73,9 +73,11 @@ public class AppModel {
                 "Japanese", "13,617,444", "2,187.66 km2", "6,224.66 / km2", R.string.tokyo_description,
                 new int[]{R.drawable.tokyo_1, R.drawable.tokyo_2, R.drawable.tokyo_3});
 
+        // Setting Venice's image resource and description resource ID's to be null, which will be loaded in the
+        // dynamic feature module
         destinations[16] = new DestinationModel("Venice", "Italy", "Europe",
-                "Italian", "264,557", "414.57 km2", "640 / km2", R.string.venice_description,
-                new int[]{R.drawable.venice_1, R.drawable.venice_2, R.drawable.venice_3});
+                "Italian", "264,557", "414.57 km2", "640 / km2", 0,
+                null);
     }
 
     public DestinationModel[] getDestinatations() {

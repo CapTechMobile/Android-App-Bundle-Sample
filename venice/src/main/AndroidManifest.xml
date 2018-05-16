@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="examples.android.captech.venice">
+
+    <dist:module
+        dist:onDemand="true"
+        dist:title="@string/title_venice">
+        <dist:fusing include="true" />
+    </dist:module>
+
+    <application>
+        <activity android:name=".activity.VeniceDestinationActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="examples.android.captech.traveldestinationsapp.activity.HomeActivity" />
+        </activity>
+    </application>
+
+</manifest>
